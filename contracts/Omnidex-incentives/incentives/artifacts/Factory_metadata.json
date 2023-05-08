@@ -1,0 +1,119 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isInstantiation",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					},
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "instantiations",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "creator",
+						"type": "address"
+					}
+				],
+				"name": "getInstantiationCount",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "instantiation",
+						"type": "address"
+					}
+				],
+				"name": "ContractInstantiation",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"getInstantiationCount(address)": {
+					"return": "Returns number of instantiations by creator."
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/incentives/MultiSigWalletWithDailyLimit.sol": "Factory"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Omnidex-incentives/incentives/MultiSigWalletWithDailyLimit.sol": {
+			"keccak256": "0xa90a565a53ceef0199ab900ef0d4f930359090e2b985d40339020ac9e928ce24",
+			"urls": [
+				"bzzr://5cdee75794d76a03942dfa52ea5af781ba45c2bfc80c168798f076b18dd30c52"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,665 @@
+{
+	"compiler": {
+		"version": "0.4.19+commit.c4cbbb05"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "owners",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "removeOwner",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "revokeConfirmation",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "confirmations",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "pending",
+						"type": "bool"
+					},
+					{
+						"name": "executed",
+						"type": "bool"
+					}
+				],
+				"name": "getTransactionCount",
+				"outputs": [
+					{
+						"name": "count",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "addOwner",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "isConfirmed",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "getConfirmationCount",
+				"outputs": [
+					{
+						"name": "count",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "transactions",
+				"outputs": [
+					{
+						"name": "destination",
+						"type": "address"
+					},
+					{
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"name": "executed",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getOwners",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"name": "to",
+						"type": "uint256"
+					},
+					{
+						"name": "pending",
+						"type": "bool"
+					},
+					{
+						"name": "executed",
+						"type": "bool"
+					}
+				],
+				"name": "getTransactionIds",
+				"outputs": [
+					{
+						"name": "_transactionIds",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "getConfirmations",
+				"outputs": [
+					{
+						"name": "_confirmations",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "transactionCount",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_required",
+						"type": "uint256"
+					}
+				],
+				"name": "changeRequirement",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmTransaction",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "destination",
+						"type": "address"
+					},
+					{
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "submitTransaction",
+				"outputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_OWNER_COUNT",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "required",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "replaceOwner",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "executeTransaction",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "_owners",
+						"type": "address[]"
+					},
+					{
+						"name": "_required",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "Confirmation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "Revocation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "Submission",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "Execution",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "transactionId",
+						"type": "uint256"
+					}
+				],
+				"name": "ExecutionFailure",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerAddition",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerRemoval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "required",
+						"type": "uint256"
+					}
+				],
+				"name": "RequirementChange",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"author": "Stefan George - <stefan.george@consensys.net>\r",
+			"methods": {
+				"addOwner(address)": {
+					"details": "Allows to add a new owner. Transaction has to be sent by wallet.\r",
+					"params": {
+						"owner": "Address of new owner.\r"
+					}
+				},
+				"changeRequirement(uint256)": {
+					"details": "Allows to change the number of required confirmations. Transaction has to be sent by wallet.\r",
+					"params": {
+						"_required": "Number of required confirmations.\r"
+					}
+				},
+				"confirmTransaction(uint256)": {
+					"details": "Allows an owner to confirm a transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					}
+				},
+				"executeTransaction(uint256)": {
+					"details": "Allows anyone to execute a confirmed transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					}
+				},
+				"getConfirmationCount(uint256)": {
+					"details": "Returns number of confirmations of a transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					},
+					"return": "Number of confirmations.\r"
+				},
+				"getConfirmations(uint256)": {
+					"details": "Returns array with owner addresses, which confirmed transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					},
+					"return": "Returns array of owner addresses.\r"
+				},
+				"getOwners()": {
+					"details": "Returns list of owners.\r",
+					"return": "List of owner addresses.\r"
+				},
+				"getTransactionCount(bool,bool)": {
+					"details": "Returns total number of transactions after filers are applied.\r",
+					"params": {
+						"executed": "Include executed transactions.\r",
+						"pending": "Include pending transactions.\r"
+					},
+					"return": "Total number of transactions after filters are applied.\r"
+				},
+				"getTransactionIds(uint256,uint256,bool,bool)": {
+					"details": "Returns list of transaction IDs in defined range.\r",
+					"params": {
+						"executed": "Include executed transactions.\r",
+						"from": "Index start position of transaction array.\r",
+						"pending": "Include pending transactions.\r",
+						"to": "Index end position of transaction array.\r"
+					},
+					"return": "Returns array of transaction IDs.\r"
+				},
+				"isConfirmed(uint256)": {
+					"details": "Returns the confirmation status of a transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					},
+					"return": "Confirmation status.\r"
+				},
+				"removeOwner(address)": {
+					"details": "Allows to remove an owner. Transaction has to be sent by wallet.\r",
+					"params": {
+						"owner": "Address of owner.\r"
+					}
+				},
+				"replaceOwner(address,address)": {
+					"details": "Allows to replace an owner with a new owner. Transaction has to be sent by wallet.\r",
+					"params": {
+						"newOwner": "Address of new owner.\r",
+						"owner": "Address of owner to be replaced.\r"
+					}
+				},
+				"revokeConfirmation(uint256)": {
+					"details": "Allows an owner to revoke a confirmation for a transaction.\r",
+					"params": {
+						"transactionId": "Transaction ID.\r"
+					}
+				},
+				"submitTransaction(address,uint256,bytes)": {
+					"details": "Allows an owner to submit and confirm a transaction.\r",
+					"params": {
+						"data": "Transaction data payload.\r",
+						"destination": "Transaction target address.\r",
+						"value": "Transaction ether value.\r"
+					},
+					"return": "Returns transaction ID.\r"
+				}
+			},
+			"title": "Multisignature wallet - Allows multiple parties to agree on transactions before execution.\r"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/incentives/incentivevault/MultiSigWallet.sol": "MultiSigWallet"
+		},
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Omnidex-incentives/incentives/incentivevault/MultiSigWallet.sol": {
+			"keccak256": "0xf5773b18771b93bf128ada3d02d457ac82a84031021f8bba660c2b581cf00de2",
+			"urls": [
+				"bzzr://0454edac54962911fbc7167c70abc127418ae1f6aee1437a495dec1e57988a12"
+			]
+		}
+	},
+	"version": 1
+}

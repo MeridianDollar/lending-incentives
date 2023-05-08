@@ -1,0 +1,937 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "rewardToken",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "emissionManager",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "emission",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetConfigUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetIndexUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "claimer",
+						"type": "address"
+					}
+				],
+				"name": "ClaimerSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newDistributionEnd",
+						"type": "uint256"
+					}
+				],
+				"name": "DistributionEndUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardsAccrued",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "claimer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardsClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "vault",
+						"type": "address"
+					}
+				],
+				"name": "RewardsVaultUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "UserIndexUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DISTRIBUTION_END",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "EMISSION_MANAGER",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "REVISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "REWARD_TOKEN",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "assets",
+				"outputs": [
+					{
+						"internalType": "uint104",
+						"name": "emissionPerSecond",
+						"type": "uint104"
+					},
+					{
+						"internalType": "uint104",
+						"name": "index",
+						"type": "uint104"
+					},
+					{
+						"internalType": "uint40",
+						"name": "lastUpdateTimestamp",
+						"type": "uint40"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "claimRewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "claimRewardsOnBehalf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "claimRewardsToSelf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "emissionsPerSecond",
+						"type": "uint256[]"
+					}
+				],
+				"name": "configureAssets",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getAssetData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getClaimer",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDistributionEnd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "assets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getRewardsBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRewardsVault",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getUserAssetData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getUserUnclaimedRewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "userBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "handleAction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rewardsVault",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					}
+				],
+				"name": "setClaimer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "distributionEnd",
+						"type": "uint256"
+					}
+				],
+				"name": "setDistributionEnd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rewardsVault",
+						"type": "address"
+					}
+				],
+				"name": "setRewardsVault",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Omnidex*",
+			"kind": "dev",
+			"methods": {
+				"DISTRIBUTION_END()": {
+					"details": "for backwards compatibility with the previous DistributionManager used",
+					"returns": {
+						"_0": "The end of the distribution*"
+					}
+				},
+				"claimRewards(address[],uint256,address)": {
+					"details": "Claims reward for an user to the desired address, on all the assets of the lending pool, accumulating the pending rewards",
+					"params": {
+						"amount": "Amount of rewards to claim",
+						"to": "Address that will be receiving the rewards"
+					},
+					"returns": {
+						"_0": "Rewards claimed*"
+					}
+				},
+				"claimRewardsOnBehalf(address[],uint256,address,address)": {
+					"details": "Claims reward for an user on behalf, on all the assets of the lending pool, accumulating the pending rewards. The caller must be whitelisted via \"allowClaimOnBehalf\" function by the RewardsAdmin role manager",
+					"params": {
+						"amount": "Amount of rewards to claim",
+						"to": "Address that will be receiving the rewards",
+						"user": "Address to check and claim rewards"
+					},
+					"returns": {
+						"_0": "Rewards claimed*"
+					}
+				},
+				"claimRewardsToSelf(address[],uint256)": {
+					"details": "Claims reward for msg.sender, on all the assets of the lending pool, accumulating the pending rewards",
+					"params": {
+						"amount": "Amount of rewards to claim"
+					},
+					"returns": {
+						"_0": "Rewards claimed*"
+					}
+				},
+				"configureAssets(address[],uint256[])": {
+					"details": "Configure assets for a certain rewards emission",
+					"params": {
+						"assets": "The assets to incentivize",
+						"emissionsPerSecond": "The emission for each asset"
+					}
+				},
+				"getAssetData(address)": {
+					"details": "Returns the configuration of the distribution for a certain asset",
+					"params": {
+						"asset": "The address of the reference asset of the distribution"
+					},
+					"returns": {
+						"_0": "The asset index, the emission per second and the last updated timestamp*"
+					}
+				},
+				"getClaimer(address)": {
+					"details": "Returns the whitelisted claimer for a certain address (0x0 if not set)",
+					"params": {
+						"user": "The address of the user"
+					},
+					"returns": {
+						"_0": "The claimer address"
+					}
+				},
+				"getDistributionEnd()": {
+					"details": "Gets the end date for the distribution",
+					"returns": {
+						"_0": "The end of the distribution*"
+					}
+				},
+				"getRewardsBalance(address[],address)": {
+					"details": "Returns the total of rewards of an user, already accrued + not yet accrued",
+					"params": {
+						"user": "The address of the user"
+					},
+					"returns": {
+						"_0": "The rewards*"
+					}
+				},
+				"getRewardsVault()": {
+					"details": "returns the current rewards vault contract",
+					"returns": {
+						"_0": "address"
+					}
+				},
+				"getUserAssetData(address,address)": {
+					"details": "Returns the data of an user on a distribution",
+					"params": {
+						"asset": "The address of the reference asset of the distribution",
+						"user": "Address of the user"
+					},
+					"returns": {
+						"_0": "The new index*"
+					}
+				},
+				"getUserUnclaimedRewards(address)": {
+					"details": "returns the unclaimed rewards of the user",
+					"params": {
+						"user": "the address of the user"
+					},
+					"returns": {
+						"_0": "the unclaimed user rewards"
+					}
+				},
+				"handleAction(address,uint256,uint256)": {
+					"details": "Called by the corresponding asset on any update that affects the rewards distribution",
+					"params": {
+						"asset": "The address of the user",
+						"totalSupply": "The total supply of the asset in the lending pool*",
+						"userBalance": "The balance of the user of the asset in the lending pool"
+					}
+				},
+				"initialize(address)": {
+					"details": "Initialize OmnidexIncentivesController",
+					"params": {
+						"rewardsVault": "rewards vault to pull ERC20 funds*"
+					}
+				},
+				"setClaimer(address,address)": {
+					"details": "Whitelists an address to claim the rewards on behalf of another address",
+					"params": {
+						"claimer": "The address of the claimer",
+						"user": "The address of the user"
+					}
+				},
+				"setDistributionEnd(uint256)": {
+					"details": "Sets the end date for the distribution",
+					"params": {
+						"distributionEnd": "The end date timestamp*"
+					}
+				},
+				"setRewardsVault(address)": {
+					"details": "update the rewards vault address, only allowed by the Rewards admin",
+					"params": {
+						"rewardsVault": "The address of the rewards vault*"
+					}
+				}
+			},
+			"title": "PullRewardsIncentivesController",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Distributor contract for ERC20 rewards to the Omnidex protocol participants that pulls ERC20 from external account",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/incentives/PullRewardsIncentivesController.sol": "PullRewardsIncentivesController"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@aave/aave-stake/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x150506e2e40dc3cea841fe0ade6021b9b0d4e09f7616d312bc7c1300a2d7a94f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d3dbf854f310f20a48cd727e1680067f4d911a4c6d220886935736297a0f89cb",
+				"dweb:/ipfs/QmU8xN2AYrURFgmB4hLFLamc7aJe6VD5qkUEcfdrKPcz9C"
+			]
+		},
+		"@aave/aave-stake/contracts/lib/Address.sol": {
+			"keccak256": "0x456a1aebf00cb1f2987ca41f1924e4811703f10800a34ecb759e5d1dc472bb78",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ee41b6968eca15df18d524bb43b928e0405a6fe3d725ffe5950adb73c946cc0b",
+				"dweb:/ipfs/QmP4hcWLnx33hoRpFjjQAodx4Hb7oXxHX58kpWcZX8v8cx"
+			]
+		},
+		"@aave/aave-stake/contracts/lib/SafeERC20.sol": {
+			"keccak256": "0xbba27d4b67c08f2a51ecf534aadfd510260996fcf91299691e955ee7539dd5a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3ea0462318f91a1937d2ab9b51ce675399b2b958c0f9faee08d4c2b721197c3f",
+				"dweb:/ipfs/QmZctUrjVX8JJT7umbcjvreTyoTAhzxAEFLi3WhXHBe9r7"
+			]
+		},
+		"@aave/aave-stake/contracts/lib/SafeMath.sol": {
+			"keccak256": "0xf32a71745588178f5f64b96e7766589e48d5402c4679b3c04085760f9437f00b",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://b05078f9fefe539e3252f8f8c2ffbd50f5106787bccf533a7ad5f7d0c3ff77d2",
+				"dweb:/ipfs/QmTXQkKZCmWv8nF7iK1Mwa7AVJzkzfL4AkZvJY2Qx4wXd2"
+			]
+		},
+		"@aave/aave-stake/contracts/utils/VersionedInitializable.sol": {
+			"keccak256": "0xedfec4c491ad24c0a1024fc801c22f2a16d1f316f2a5cdcc883e0bbc451cffc7",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://e77712031df46b9ffd6ca6d405566177fe35191a427a7278130986eb2889eb57",
+				"dweb:/ipfs/QmUEs4hmDe859S9C2jbU7yMPA59ZrhQRqcW268EmfavnrD"
+			]
+		},
+		"contracts/Omnidex-incentives/incentives/PullRewardsIncentivesController.sol": {
+			"keccak256": "0xed9c9f7ab7e313e4d1789045c7c08b5b7f5cb7f347870e330583ca041f96a70f",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://ab74647d1bcdcc9954b05328841949b7f20dd771748319b7154c0b8b5503515d",
+				"dweb:/ipfs/QmcFFRE9H2YApmf9rwKAZpTFjSuBmJT8csRMi3Z1sVy8zQ"
+			]
+		},
+		"contracts/Omnidex-incentives/incentives/TempIncentivesVault.sol": {
+			"keccak256": "0xdf99f0fddb0ea86e48957b3fbd3383a8d4a4909dbd93ffe5e8272999872a7b8e",
+			"urls": [
+				"bzz-raw://37868c63e3c961bfffca6ba4b2e393956a7d4d1c9d4b13d795e5043758f8109e",
+				"dweb:/ipfs/QmWXLHxSdTLX21oR2eawqb3AducEWnjTWdWBcf73tcUsKb"
+			]
+		},
+		"contracts/Omnidex-incentives/incentives/base/BaseIncentivesController.sol": {
+			"keccak256": "0x04134ec432e4ef50438e93854442ef0b204ef75f040a791984d00ef0249c2edc",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://dd86038d54a170da1266dff649985d82b048923930b74107414d5a06b4ae7577",
+				"dweb:/ipfs/QmZ5pPeAVqZsQjiESWhuoC7g3ES6giKfU7jX9LrkAk1Fmr"
+			]
+		},
+		"contracts/Omnidex-incentives/incentives/base/DistributionManager.sol": {
+			"keccak256": "0x43b2afa8394898d61bde7ecac7d145cf194b5dfd953d2c9d7694645580a84723",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://c468a996e248fa021a4886f2a8289426593a6ebe3a7269f4aa08a6af741c232f",
+				"dweb:/ipfs/QmUe2xxKETrRMB32joUxdRtn6FVNMm7mVRyEFtftiCZcy1"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOmnidexDistributionManager.sol": {
+			"keccak256": "0xabf5e1d31a3567f017adf41a4384f0c7a6fce4e81441a7b42fb565f92256a87d",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://a2aab2cd0efc27da9ced088fcb5534b62c4ebd436688778af86949e706d22fef",
+				"dweb:/ipfs/QmPAQiLYLB7QXMKaHjSwWKaK8mN8pgBRteJUqg5ptKebZE"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOmnidexIncentivesController.sol": {
+			"keccak256": "0x7683a3852ce80d45245e2b131f17db06d52b3e2ca14384a8b29844677945ebb2",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://a4de79e0afd41b72e858c865c316339397b3696e50e97307f7e1c44b801ca4db",
+				"dweb:/ipfs/QmY2ja6gmwGMMhLNfoczeWgq7BMKjizVGosd2nswUV2hpW"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IScaledBalanceToken.sol": {
+			"keccak256": "0x0c6f6980efd0a97e48040fe333c41e32403f8c2ec3629cbd9f714640cf18b213",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://d5f7a3234e76841405077f4c4d4700d212bb9987328d5b6e8236cdd864c4caf7",
+				"dweb:/ipfs/QmZFgW84wn6tZjb4VMW7ifSBWGW1BnPc75iWP3JzS3Ldnr"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/DistributionTypes.sol": {
+			"keccak256": "0xbb24d51b39ff627c1d2dbbaa5063ae7f1d515ec3980cc6ed8f5d171c17ef1d36",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://30120d3556895da3f517a6ce8954e4419944f9e07b7b4cd3d596df3e8e8103e3",
+				"dweb:/ipfs/QmTXPN7Q8ULdJnJVGVTwLbw7Rvy5h17DfabKf8szvprQNb"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/SafeMath.sol": {
+			"keccak256": "0x23218dd12c40acbd9c7c6f799d20dd84c88e1262583e25465f1413ed8c5d67d5",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://4896e02c7ad212eb804e1ad03a711f964e04eb9b7d6c0024a4cd26b29adc0a1a",
+				"dweb:/ipfs/QmamjuX7iGUgpGCgnsPnUsfFMG751kBzrnB2gZFP1tkvxL"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x15e2d5bd4c28a88548074c54d220e8086f638a71ed07e6b3ba5a70066fcf458d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90faf5851c02f9bd42c5bfb54d4f0421a2612f50ab80b2c4fa24fa3792071cc2",
+				"dweb:/ipfs/QmRGM4F2PcGVF85aTfaA9YBhCHHDqrMhRjyp6fGeBTtirb"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c",
+				"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08",
+				"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+			"keccak256": "0xf12dfbe97e6276980b83d2830bb0eb75e0cf4f3e626c2471137f82158ae6a0fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3a849c2d95e85463909e5b5c920b13e7a11216ca14127085e16d22b9379d52a",
+				"dweb:/ipfs/QmUg3CZDbCCcQdroEpexBy5ZFd5vD1UWijWQq9qHZjtJNQ"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x28911e614500ae7c607a432a709d35da25f3bc5ddc8bd12b278b66358070c0ea",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://256c8c8af5eb072bc473226ab2b2187149b8fc04f5f4a4820db22527f5ce8e3c",
+				"dweb:/ipfs/QmRvi5BhnL7Rxf85KrJhwM6RRhukm4tzoctRdgQEheNyiN"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f",
+				"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96"
+			]
+		},
+		"https://github.com/OmniDexFinance/helper/blob/master/%40openzeppelin/contracts/utils/Pausable.sol": {
+			"keccak256": "0x212fb1b1d4beaf74354dad9bc329f44ee3c5375ef1c32acff76b4ecefc10f1d8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d21c68cb321d1c8d0fa39fd9ecb6bbe3b2f26623b0f38af280a010c916c85f23",
+				"dweb:/ipfs/Qmf2P51HRC4ekDHLYfbXu5SXR33gXrWtq6oKSmfyWqVRuC"
+			]
+		}
+	},
+	"version": 1
+}

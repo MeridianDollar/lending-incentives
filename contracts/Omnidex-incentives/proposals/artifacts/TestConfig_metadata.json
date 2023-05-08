@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_reserves",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_myoTokenImplementations",
+						"type": "address"
+					}
+				],
+				"name": "executeChange",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "executeFixed",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/proposals/TestConfig.sol": "TestConfig"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Omnidex-incentives/interfaces/ILendingPoolConfigurator.sol": {
+			"keccak256": "0x9f93cab78339ab46e06e8769a8b703153d940713c036a0fa762942de98fa8776",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://6798937511de2ec730ff830ff88b61c9758f7436d119b5735b550d4185700311",
+				"dweb:/ipfs/QmP2LPwb2iwSSZUdSYbnASACNVUxh9XrkHgzPPP8uwEBJL"
+			]
+		},
+		"contracts/Omnidex-incentives/proposals/TestConfig.sol": {
+			"keccak256": "0x0d13b2a17b176f67ccc6a2cbfea70af3cb95d626d7d66e945ce77bf38bc66917",
+			"license": "AGPL-3.0",
+			"urls": [
+				"bzz-raw://c4e9e4ff937d0d797ef57998df43c79eb3c5201157a59c3385ec6572a28e0851",
+				"dweb:/ipfs/QmPLB7EBR8uvtUFb8My5SDGBMS8jfQAYGEKs9s9xMV6z7h"
+			]
+		}
+	},
+	"version": 1
+}

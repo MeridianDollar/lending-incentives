@@ -1,0 +1,160 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[6]",
+						"name": "oTokenImplementations",
+						"type": "address[6]"
+					},
+					{
+						"internalType": "address[6]",
+						"name": "variableDebtImplementations",
+						"type": "address[6]"
+					}
+				],
+				"name": "execute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/proposals/ProposalIncentivesExecutor.sol": "ProposalIncentivesExecutor"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@aave/aave-stake/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x150506e2e40dc3cea841fe0ade6021b9b0d4e09f7616d312bc7c1300a2d7a94f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d3dbf854f310f20a48cd727e1680067f4d911a4c6d220886935736297a0f89cb",
+				"dweb:/ipfs/QmU8xN2AYrURFgmB4hLFLamc7aJe6VD5qkUEcfdrKPcz9C"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/ILendingPoolAddressesProvider.sol": {
+			"keccak256": "0x805ab39fec661fe4a7b100f657bd0be1599a2bec05da3a0ab03f0d6eafe47c24",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://8cb6a3db794531cd5f7bb0408b6f9b2358ab8e526878a1442e23d91b5314113d",
+				"dweb:/ipfs/QmP3AngoDhjztkQQ1FsiCC4w4pj5H8RTy4rYkLfMSwL1FK"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/ILendingPoolConfigurator.sol": {
+			"keccak256": "0x9f93cab78339ab46e06e8769a8b703153d940713c036a0fa762942de98fa8776",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://6798937511de2ec730ff830ff88b61c9758f7436d119b5735b550d4185700311",
+				"dweb:/ipfs/QmP2LPwb2iwSSZUdSYbnASACNVUxh9XrkHgzPPP8uwEBJL"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/ILendingPoolData.sol": {
+			"keccak256": "0xa2dd5f64bc25dff88e130e0f99ebe24c743f308849c8fa487bad26eef278ef6c",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://20008df765afa056c3b54e00e1321791a7a2c6d2dbf8d21e146afdbe73f8cfd1",
+				"dweb:/ipfs/QmXtN47mpdSYQb64YCQDkX8r5QFg5N9Mq5SMZ828fJPDhu"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOTokenDetailed.sol": {
+			"keccak256": "0x67a143830d137853f16cff5a41f1232c008c4f22764f32ade20f7734654e29ca",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://ea21a986420604e428b4c0ba188ca978b62f69ef1b75c336ede4074cb68f25d8",
+				"dweb:/ipfs/QmY6wt5U37obDdU9Dq1sGPzDbBjZzY7Ju2WNs8KbQmzgLN"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOmnidexDistributionManager.sol": {
+			"keccak256": "0xabf5e1d31a3567f017adf41a4384f0c7a6fce4e81441a7b42fb565f92256a87d",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://a2aab2cd0efc27da9ced088fcb5534b62c4ebd436688778af86949e706d22fef",
+				"dweb:/ipfs/QmPAQiLYLB7QXMKaHjSwWKaK8mN8pgBRteJUqg5ptKebZE"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOmnidexIncentivesController.sol": {
+			"keccak256": "0x8615452507c06e118914d5bdbd7136745f29030f2bd90fb80101eda042138d84",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://632c6c2423e567411001205cb0838ed6ccd5a6d36b9f0e27e7262cc79a081e83",
+				"dweb:/ipfs/QmSM9PrZzpBZ9Ae6tcDPWoUNztLNrtVpYTCb83bFNjJP4A"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IProposalIncentivesExecutor.sol": {
+			"keccak256": "0x1dddfc058b0df3057515e2268861206d23d9a44161494e5fbb63fdbd6c76c02c",
+			"license": "AGPL-3.0",
+			"urls": [
+				"bzz-raw://b5096d4e3ff26b0bc371b9d9551b16338534ef62b09ecc2266faff5caa744057",
+				"dweb:/ipfs/QmWX6RZm7iruLn6WGpo2bms96ppdqmVLsCnt5Qk9Aa3mrZ"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/DistributionTypes.sol": {
+			"keccak256": "0xbb24d51b39ff627c1d2dbbaa5063ae7f1d515ec3980cc6ed8f5d171c17ef1d36",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://30120d3556895da3f517a6ce8954e4419944f9e07b7b4cd3d596df3e8e8103e3",
+				"dweb:/ipfs/QmTXPN7Q8ULdJnJVGVTwLbw7Rvy5h17DfabKf8szvprQNb"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/SafeMath.sol": {
+			"keccak256": "0x23218dd12c40acbd9c7c6f799d20dd84c88e1262583e25465f1413ed8c5d67d5",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://4896e02c7ad212eb804e1ad03a711f964e04eb9b7d6c0024a4cd26b29adc0a1a",
+				"dweb:/ipfs/QmamjuX7iGUgpGCgnsPnUsfFMG751kBzrnB2gZFP1tkvxL"
+			]
+		},
+		"contracts/Omnidex-incentives/proposals/ProposalIncentivesExecutor.sol": {
+			"keccak256": "0x4feb30dc689de995452e3e470fa4926a3e7cc5a3f712658851dfa8bc9191845b",
+			"license": "AGPL-3.0",
+			"urls": [
+				"bzz-raw://73b7ae7cb9cecf08a772c0c3f625d69504781b6304d18a9b5c7a33038f7c4b6a",
+				"dweb:/ipfs/QmdUgsTmwFS6vT2UjhWKdFFzPcbKc9tcKs833EQcdmfy5Y"
+			]
+		},
+		"contracts/Omnidex-incentives/utils/DataTypes.sol": {
+			"keccak256": "0xa64c1b776b13f3f6cc88fa0742ce15073026bb526be7f324dddbd2b221e67129",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://f194c291658a18f69b8df0b1b2ddd08bbb621b821171700bf55f7586e65a6275",
+				"dweb:/ipfs/QmddN7PHqyFk8ZCveEqqoUfAsQ9sToQYna56RqKRDAFAs2"
+			]
+		},
+		"contracts/Omnidex-incentives/utils/PercentageMath.sol": {
+			"keccak256": "0xd2fe1c41c917b187512b0398c5a3b51d8fa0864b2d7dde5aa5c196f6e523ba33",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://251ae54e3634306bd51f26e6554de2ea88fb1754472e01e1371aed4b7aee5fd1",
+				"dweb:/ipfs/QmYTrJNx2LmBLwecPp9mcGeXYsVd8d49hUxgp5ESMN5Wi5"
+			]
+		}
+	},
+	"version": 1
+}

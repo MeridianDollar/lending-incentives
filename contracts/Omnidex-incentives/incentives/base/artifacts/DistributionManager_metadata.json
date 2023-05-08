@@ -1,0 +1,345 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "emissionManager",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "emission",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetConfigUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "AssetIndexUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newDistributionEnd",
+						"type": "uint256"
+					}
+				],
+				"name": "DistributionEndUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "UserIndexUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DISTRIBUTION_END",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "EMISSION_MANAGER",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "assets",
+				"outputs": [
+					{
+						"internalType": "uint104",
+						"name": "emissionPerSecond",
+						"type": "uint104"
+					},
+					{
+						"internalType": "uint104",
+						"name": "index",
+						"type": "uint104"
+					},
+					{
+						"internalType": "uint40",
+						"name": "lastUpdateTimestamp",
+						"type": "uint40"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getAssetData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDistributionEnd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "asset",
+						"type": "address"
+					}
+				],
+				"name": "getUserAssetData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "distributionEnd",
+						"type": "uint256"
+					}
+				],
+				"name": "setDistributionEnd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Omnidex*",
+			"kind": "dev",
+			"methods": {
+				"DISTRIBUTION_END()": {
+					"details": "for backwards compatibility with the previous DistributionManager used",
+					"returns": {
+						"_0": "The end of the distribution*"
+					}
+				},
+				"getAssetData(address)": {
+					"details": "Returns the configuration of the distribution for a certain asset",
+					"params": {
+						"asset": "The address of the reference asset of the distribution"
+					},
+					"returns": {
+						"_0": "The asset index, the emission per second and the last updated timestamp*"
+					}
+				},
+				"getDistributionEnd()": {
+					"details": "Gets the end date for the distribution",
+					"returns": {
+						"_0": "The end of the distribution*"
+					}
+				},
+				"getUserAssetData(address,address)": {
+					"details": "Returns the data of an user on a distribution",
+					"params": {
+						"asset": "The address of the reference asset of the distribution",
+						"user": "Address of the user"
+					},
+					"returns": {
+						"_0": "The new index*"
+					}
+				},
+				"setDistributionEnd(uint256)": {
+					"details": "Sets the end date for the distribution",
+					"params": {
+						"distributionEnd": "The end date timestamp*"
+					}
+				}
+			},
+			"title": "DistributionManager",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Accounting contract to manage multiple staking distributions",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Omnidex-incentives/incentives/base/DistributionManager.sol": "DistributionManager"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Omnidex-incentives/incentives/base/DistributionManager.sol": {
+			"keccak256": "0x43b2afa8394898d61bde7ecac7d145cf194b5dfd953d2c9d7694645580a84723",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://c468a996e248fa021a4886f2a8289426593a6ebe3a7269f4aa08a6af741c232f",
+				"dweb:/ipfs/QmUe2xxKETrRMB32joUxdRtn6FVNMm7mVRyEFtftiCZcy1"
+			]
+		},
+		"contracts/Omnidex-incentives/interfaces/IOmnidexDistributionManager.sol": {
+			"keccak256": "0xabf5e1d31a3567f017adf41a4384f0c7a6fce4e81441a7b42fb565f92256a87d",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://a2aab2cd0efc27da9ced088fcb5534b62c4ebd436688778af86949e706d22fef",
+				"dweb:/ipfs/QmPAQiLYLB7QXMKaHjSwWKaK8mN8pgBRteJUqg5ptKebZE"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/DistributionTypes.sol": {
+			"keccak256": "0xbb24d51b39ff627c1d2dbbaa5063ae7f1d515ec3980cc6ed8f5d171c17ef1d36",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://30120d3556895da3f517a6ce8954e4419944f9e07b7b4cd3d596df3e8e8103e3",
+				"dweb:/ipfs/QmTXPN7Q8ULdJnJVGVTwLbw7Rvy5h17DfabKf8szvprQNb"
+			]
+		},
+		"contracts/Omnidex-incentives/lib/SafeMath.sol": {
+			"keccak256": "0x23218dd12c40acbd9c7c6f799d20dd84c88e1262583e25465f1413ed8c5d67d5",
+			"license": "agpl-3.0",
+			"urls": [
+				"bzz-raw://4896e02c7ad212eb804e1ad03a711f964e04eb9b7d6c0024a4cd26b29adc0a1a",
+				"dweb:/ipfs/QmamjuX7iGUgpGCgnsPnUsfFMG751kBzrnB2gZFP1tkvxL"
+			]
+		}
+	},
+	"version": 1
+}
